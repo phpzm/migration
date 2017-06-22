@@ -2,15 +2,14 @@
 
 namespace Simples\Migration;
 
-use Simples\Error\SimplesRunTimeError;
 use Simples\Kernel\Container;
 use Simples\Model\ModelAbstract;
 
 /**
- * Class Migrator
+ * Class Migrant
  * @package Simples\Migration
  */
-abstract class Migrator
+abstract class Migrant
 {
     /**
      * @var ModelAbstract
@@ -18,7 +17,7 @@ abstract class Migrator
     protected $model;
 
     /**
-     * Migrator constructor.
+     * Migrant constructor.
      * @param ModelAbstract $model
      */
     public function __construct(ModelAbstract $model)
@@ -27,9 +26,9 @@ abstract class Migrator
     }
 
     /**
-     * @return Migrator
+     * @return Migrant
      */
-    public static function instance(): Migrator
+    public static function instance(): Migrant
     {
         return Container::instance()->make(static::class);
     }
