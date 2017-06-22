@@ -24,7 +24,8 @@
   ],
   "require": {
     "php": ">=7.0",
-    "phpzm/persistence": "^1.4.1",
+    "phpzm/persistence": "^1.5.1",
+    "phpzm/model": "^1.4.1"
   },
   "autoload": {
     "psr-4": {
