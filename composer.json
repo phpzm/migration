@@ -1,0 +1,34 @@
+{
+  "name": "phpzm/migration",
+  "description": "Package migration",
+  "minimum-stability": "dev",
+  "keywords": [
+    "php",
+    "framework",
+    "api",
+    "simples"
+  ],
+  "homepage": "https://github.com/phpzm/migration",
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "package",
+  "authors": [
+    {
+      "name": "William",
+      "email": "wilcorrea@gmail.com"
+    },
+    {
+      "name": "Ezio",
+      "email": "ezioadsr@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "phpzm/persistence": "^1.4.1",
+  },
+  "autoload": {
+    "psr-4": {
+      "Simples\\Migration\\": "src/"
+    }
+  }
+}
