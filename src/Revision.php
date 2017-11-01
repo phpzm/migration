@@ -26,30 +26,26 @@ abstract class Revision extends QueryBuilder
     abstract public function down();
 
     /**
-     * @param mixed $instructions
+     * @param Migrant $migrant
      * @param string $owner
      * @param bool $once
      * @return Revision
      */
-    protected function add(mixed $instructions, string $owner = '', bool $once = false): Revision
+    protected function add(Migrant $migrant, string $owner = '', bool $once = false): Revision
     {
-        $this->instructions[] = [
-            'instructions' => $instructions,
-            'owner' => $owner,
-            'once' => $once,
-        ];
+        $this->instructions[] = ['instructions' => $migrant->getInstructions(), 'owner' => $owner, 'once' => $once];
 
         return $this;
     }
 
     /**
-     * @param mixed $instructions
+     * @param Migrant $migrant
      * @param string $owner
      * @return Revision
      */
-    protected function once(mixed $instructions, string $owner = '')
+    protected function once(Migrant $migrant, string $owner = '')
     {
-        return $this->add($instructions, $owner, true);
+        return $this->add($migrant, $owner, true);
     }
 
     /**

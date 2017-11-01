@@ -2,6 +2,8 @@
 
 namespace Simples\Migration;
 
+use Simples\Persistence\Field;
+
 /**
  * Interface Driver
  * @package Simples\Migration
@@ -9,37 +11,44 @@ namespace Simples\Migration;
 interface Driver
 {
     /**
-     * @return string
+     * @param string $collection
+     * @param array $fields
+     * @return Instruction
      */
-    public static function create(): string;
+    public function create(string $collection, array $fields): Instruction;
 
     /**
+     * @param string $collection
      * @param array $options
-     * @return string
+     * @return Instruction
      */
-    public static function alter(array $options): string;
+    public function alter(string $collection, array $options): Instruction;
 
     /**
-     * @return string
+     * @param string $collection
+     * @return Instruction
      */
-    public static function drop(): string;
+    public function drop(string $collection): Instruction;
 
     /**
-     * @param string $field
-     * @return string
+     * @param string $collection
+     * @param Field $field
+     * @return Instruction
      */
-    public static function add(string $field): string;
+    public function add(string $collection, Field $field): Instruction;
 
     /**
-     * @param string $field
-     * @return string
+     * @param string $collection
+     * @param Field $field
+     * @return Instruction
      */
-    public static function change(string $field): string;
+    public function change(string $collection, Field $field): Instruction;
 
     /**
-     * @param string $field
-     * @return string
+     * @param string $collection
+     * @param Field $field
+     * @return Instruction
      */
-    public static function remove(string $field): string;
+    public function remove(string $collection, Field $field): Instruction;
 
 }
