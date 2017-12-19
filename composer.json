@@ -10,7 +10,7 @@
   ],
   "homepage": "https://github.com/phpzm/migration",
   "license": "MIT",
-  "version": "0.5.19",
+  "version": "0.5.20",
   "type": "package",
   "authors": [
     {
@@ -24,7 +24,7 @@
   ],
   "require": {
     "php": ">=7.0",
-    "phpzm/model": "^1.14.13"
+    "phpzm/model": "^1.14.14"
   },
   "autoload": {
     "psr-4": {
